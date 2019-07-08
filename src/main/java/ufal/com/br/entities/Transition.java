@@ -10,7 +10,7 @@ public class Transition {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "description")
+    @Column(name = "description", nullable = false, unique = true)
     private String description;
 
     @OneToOne(mappedBy = "transition", fetch = FetchType.LAZY)
@@ -25,9 +25,13 @@ public class Transition {
 
     public Transition(){}
 
-    // Get - Set
+    public Transition(int id, String description){
+        this.id = id;
+        this.description = description;
+    }
 
-    public int getId() {
+    // Get - Set
+	public int getId() {
         return id;
     }
 
