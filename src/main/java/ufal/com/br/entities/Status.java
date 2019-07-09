@@ -25,6 +25,8 @@ public class Status {
     @JoinColumn(name = "moment_id")
     private Moment moment;
 
+    public Status(){}
+
     public Status(int series, Sinal sinal, Transition transition, Moment moment) {
         this.series = series;
         this.sinal = sinal;

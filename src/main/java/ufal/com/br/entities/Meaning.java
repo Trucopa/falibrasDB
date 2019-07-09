@@ -29,8 +29,22 @@ public class Meaning implements Serializable {
 
 
     // Constructor
+    public Meaning (String description, List<Category> categoriesList){
+        this.description = description;
+        this.categoriesList = categoriesList;
+    }
+    public Meaning (int id, String description){
+        this.id = id;
+        this.description = description;
+    }
     public Meaning(String description){
         this.description = description;
+    }
+    public Meaning(){}
+
+
+    public void addCategory(Category category){
+        categoriesList.add(category);
     }
 
 

@@ -25,7 +25,7 @@ public class Category implements Serializable{
     private List<Meaning> meaningsList;
 
 
-    // Constructors
+    // Constructor
     public Category(int id, String name){
         this.id = id;
         this.name = name;
