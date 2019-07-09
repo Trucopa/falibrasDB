@@ -23,6 +23,10 @@ public class ArticulationPoint {
     public ArticulationPoint(String description) {
         this.description = description;
     }
+    public ArticulationPoint(int id, String description) {
+        this.description = description;
+        this.id = id;
+    }
     public ArticulationPoint(){}
 
     // Get - Set

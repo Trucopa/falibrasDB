@@ -28,10 +28,12 @@ public class Moment {
 
     // Constructor
 
-    public Moment(HandsConfig handsConfig, ArticulationPoint articulationPoints) {
+    public Moment(HandsConfig handsConfig, ArticulationPoint articulationPoints, FacialExpression facialExpression) {
         this.handsConfig = handsConfig;
         this.articulationPoints = articulationPoints;
+        this.facialExpression = facialExpression;
     }
+    public Moment(){}
 
     // Get - Set
 

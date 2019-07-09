@@ -18,6 +18,16 @@ public class FacialExpression {
     @OneToMany(mappedBy = "facialExpression", targetEntity = Moment.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Moment> moments;
 
+    //Constructors
+    public FacialExpression(String description){
+        this.description = description;
+    }
+    public FacialExpression(int id, String description){
+        this.id = id;
+        this.description = description;
+    }
+    public FacialExpression(){}
+
     /**
      * @return the description
      */

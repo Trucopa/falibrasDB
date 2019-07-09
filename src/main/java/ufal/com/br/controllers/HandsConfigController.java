@@ -52,7 +52,7 @@ public class HandsConfigController{
     public List<HandsConfig> read (){
 
         em.getTransaction().begin();
-        Query q = em.createNativeQuery("SELECT description FROM transition");
+        Query q = em.createNativeQuery("SELECT description FROM handsconfig");
         List<HandsConfig> list = q.getResultList();
         em.getTransaction().commit();
         emf.close();

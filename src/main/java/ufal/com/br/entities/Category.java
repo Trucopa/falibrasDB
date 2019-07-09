@@ -25,10 +25,15 @@ public class Category implements Serializable{
     private List<Meaning> meaningsList;
 
 
-    // Constructor
+    // Constructors
+    public Category(int id, String name){
+        this.id = id;
+        this.name = name;
+    }
     public Category(String name){
         this.name = name;
     }
+    public Category(){}
 
 
     // Get - Set

@@ -9,24 +9,27 @@ import javax.persistence.Query;
 
 import org.hibernate.HibernateException;
 
-import ufal.com.br.entities.FacialExpression;
+import ufal.com.br.entities.Moment;
 
-public class FacialExpressionController{
+public class MomentController {
 
+    
     EntityManagerFactory emf;
     EntityManager em;
 
-    public FacialExpressionController(){
+     //Constructor
+     public MomentController() {
         emf = Persistence.createEntityManagerFactory("falibrasDB");
         em = emf.createEntityManager();
     }
 
-    public void save(FacialExpression fe){
+    //Salvar no banco
+    public void save(Moment moment){
 
         try {
 
             em.getTransaction().begin();
-            em.merge(fe);
+            em.merge(moment);
             em.getTransaction().commit();
 
         } catch (HibernateException he) {
@@ -39,31 +42,38 @@ public class FacialExpressionController{
         }
     }
 
+    //TODO
     //Remover do banco
-    public void delete(FacialExpression fe){
+    public void delete(Moment moment){
 
         em.getTransaction().begin();
         //Query q = em.createNativeQuery("DELETE transition FROM transition where transition_id = " + transition.getId());
-        Query q = em.createNativeQuery("DELETE facialexpression FROM facialexpression where description like '" + fe.getDescription()+"'");
+        Query q = em.createNativeQuery("DELETE * FROM moment where moment_id = " + moment.getId());
         q.executeUpdate();
         em.getTransaction().commit();
         emf.close();
     }
 
-    public List<FacialExpression> read (){
+    public List<Moment> read (){
 
         em.getTransaction().begin();
-        Query q = em.createNativeQuery("SELECT description FROM facialexpression");
-        List<FacialExpression> list = q.getResultList();
+        Query q = em.createNativeQuery("SELECT * FROM moment");
+        List<Moment> list = q.getResultList();
         em.getTransaction().commit();
         emf.close();
         return list;
     }
-
-    public void updateById(FacialExpression fe){
+/*
+    public void updateByDescription(Transition transition){
         try {
             em.getTransaction().begin();
-            em.merge(fe);
+            Query q = em.createNativeQuery("SELECT transition_id FROM transition WHERE description = '"+transition.getDescription()+"'");
+            List<Integer> list = q.getResultList();
+            if(list != null){
+                transition.setId(list.get(0));
+            }
+            //em.getTransaction().commit();
+            em.merge(transition);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,5 +81,16 @@ public class FacialExpressionController{
             emf.close();
         }
     }
-
+*/
+    public void updateById(Moment moment){
+        try {
+            em.getTransaction().begin();
+            em.merge(moment);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            emf.close();
+        }
+    }
 }

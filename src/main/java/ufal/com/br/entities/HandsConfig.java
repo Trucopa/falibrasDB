@@ -22,6 +22,11 @@ public class HandsConfig {
     public HandsConfig(String description) {
         this.description = description;
     }
+    public HandsConfig(int id, String description) {
+        this.description = description;
+        this.id = id;
+    }
+    public HandsConfig(){}
 
     //Get - Set
 
