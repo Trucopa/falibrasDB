@@ -10,7 +10,7 @@ public class Transition {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "description", nullable = false, unique = true)
+    @Column(name = "description", nullable = false)
     private String description;
 
     @OneToOne(mappedBy = "transition", fetch = FetchType.LAZY)
