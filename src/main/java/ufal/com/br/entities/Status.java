@@ -27,6 +27,14 @@ public class Status {
 
     public Status(){}
 
+    public Status(int id, int series, Sinal sinal, Transition transition, Moment moment) {
+        this.series = series;
+        this.sinal = sinal;
+        this.transition = transition;
+        this.moment = moment;
+        this.id = id; 
+    }
+
     public Status(int series, Sinal sinal, Transition transition, Moment moment) {
         this.series = series;
         this.sinal = sinal;

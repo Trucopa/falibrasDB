@@ -43,9 +43,9 @@ public class Meaning implements Serializable {
     public Meaning(){}
 
 
-    public void addCategory(Category category){
-        categoriesList.add(category);
-    }
+    //public void addCategory(Category category){
+    //    categoriesList.add(category);
+    //}
 
 
     // Get - Set

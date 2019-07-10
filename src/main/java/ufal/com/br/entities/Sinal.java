@@ -34,6 +34,14 @@ public class Sinal {
     // Constructors
     public Sinal(){}
 
+    public Sinal(int id, String gloss, List<Sinal> sinals, List<Meaning> meanings, String urkVideo){
+        this.gloss = gloss;
+        this.sinals = sinals;
+        this.meanings = meanings;
+        this.urlVideo = urkVideo;
+        this.id = id;
+    }
+
     public Sinal(String gloss, List<Sinal> sinals, List<Meaning> meanings, String urkVideo){
         this.gloss = gloss;
         this.sinals = sinals;
